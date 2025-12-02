@@ -20,15 +20,32 @@
   background-color: lightgoldenrodyellow;
 }
 
+
 .animal {
   padding: 16px;
-
-  /*
-    The animals are very small.
-    The size of the emojis is controlled via the font size.
-    Set the font size to 32px.
-  */
+  font-size: 32px;
 }
+
+.crocodile:hover {
+  background-color: lightblue;
+}
+
+.giraffe {
+  text-align: center;
+}
+
+.giraffe:hover {
+  background-color: lightgreen;
+}
+
+.dino {
+  text-align: right;
+}
+
+.dino:hover {
+  background-color: lightsalmon;
+}
+
 
 /*
   The giraffe is afraid of the crocodile and the dino.
