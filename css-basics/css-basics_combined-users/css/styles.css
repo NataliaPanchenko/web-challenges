@@ -1,9 +1,3 @@
-/*
-  Scroll down to the bottom of the file
-  to see the instructions for this exercise.
-   ⬇
-*/
-
 *,
 *::before,
 *::after {
@@ -31,6 +25,15 @@ ul {
   width: max-content;
 }
 
+ul .user .bio {
+  display: none;
+}
+
+ul .user .location {
+  text-align: left;
+  color: darkslategray;
+}
+
 li {
   margin: 8px 0;
 }
@@ -46,52 +49,40 @@ li {
   background-color: white;
 }
 
+aside .user {
+  min-width: 250px;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+aside .user .name {
+  font-size: 16px;
+}
+
+aside .user .bio {
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+aside .user .location {
+  font-size: 10px;
+}
+
 .name {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   margin: 0;
 }
 
 .bio {
-  font-size: 14px;
+  font-size: 12px;
   color: darkslategray;
+  margin: 6px 0;
 }
 
 .location {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   text-align: end;
   margin: 0;
 }
-
-/*
-  Part 1
-
-  Make .user elements inside the aside smaller:
-    - reduce the max-width to 250px
-    - reduce the padding to 12px
-    - reduce the border-radius to 4px
-    - reduce the font-size of the .name to 16px
-    - reduce the font-size of the .bio to 12px
-    - set the margin of the .bio to "6px 0"
-    - reduce the font-size of the .location to 10px
-  
-
-  Make sure to not change the styles of the .user element anywhere else.
-  
-  To facilitate layout debugging, apply the 'debug' class to the <html> element. 
-  This triggers visual helper styles from 'debug.css' that outline structural elements
-  like <body>, <main>, <aside>, <ul>, and .user with labeled overlays for easy identification.
-*/
-
-/*
-  Part 2
-
-  For all .user elements inside an unordered list:
-    - hide the .bio
-    - align the .location to the left and set it's color to darkslategray
-
-  Make sure to not change the styles of the .user element anywhere else.
-
-  💡 You can use the display property to hide elements.
-*/
