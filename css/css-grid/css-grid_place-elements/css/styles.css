@@ -57,14 +57,12 @@ body {
 
 .element-1 {
   /* Add styles here */
-  grid-column-start: 3;
-  grid-column-end: 5;
+  grid-column: 3 / 5;
 }
 
 .element-2 {
   /* Add styles here */
-  grid-column-start: 5;
-  grid-column-end: 11;
+  grid-column: 5 / 11;
 }
 
 .element-5 {
