@@ -33,8 +33,7 @@ body {
 
   /* Add styles to the grid container */
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  grid-template-rows: repeat(2, 30%);
+  grid-template: repeat(2, 30%) / repeat(2, 1fr);
 }
 
 .teaser-grid__teaser {
