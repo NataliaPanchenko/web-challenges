@@ -31,7 +31,8 @@ body {
 .fish {
   width: 20rem;
   margin: 2rem auto;
-
+  display: grid;
+  grid-template-columns: 80% auto; /* текст | иконка */
   /* Add styles to the container */
 }
 
@@ -51,4 +52,7 @@ body {
   padding: 1rem;
   margin: 0 0 2rem 0;
   background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
