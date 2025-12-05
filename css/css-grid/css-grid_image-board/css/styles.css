@@ -15,6 +15,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 300px 200px 300px;
+  grid-template-areas: 
+    "bn pn ml" 
+    "ap pn cf" 
+    "ap to cf";
   gap: 1rem;
   padding: 1rem;
   /* Add styles here */
@@ -30,24 +34,30 @@ body {
 
 .image-board__image--1 {
   /* Add styles here */
+  grid-area: bn;
 }
 
 .image-board__image--2 {
   /* Add styles here */
+  grid-area: ap;
 }
 
 .image-board__image--3 {
   /* Add styles here */
+  grid-area: ml;
 }
 
 .image-board__image--4 {
   /* Add styles here */
+  grid-area: pn;
 }
 
 .image-board__image--5 {
   /* Add styles here */
+  grid-area: to;
 }
 
 .image-board__image--6 {
   /* Add styles here */
+  grid-area: cf;
 }
