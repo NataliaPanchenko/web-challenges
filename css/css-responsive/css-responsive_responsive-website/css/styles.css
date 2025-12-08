@@ -233,7 +233,7 @@ body {
   color: var(--eggshell-white);
 }
 
-@media (min-width: 900px) {
+@media screen and (min-width: 900px) {
   .card-section {
     flex-direction: row;
     flex-wrap: wrap;
@@ -245,7 +245,7 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .card-section {
     flex-direction: row;
     flex-wrap: wrap;
