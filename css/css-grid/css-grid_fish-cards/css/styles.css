@@ -32,7 +32,7 @@ body {
   width: 20rem;
   margin: 2rem auto;
   display: grid;
-  grid-template-columns: 80% auto; /* текст | иконка */
+  grid-template-columns: 2fr 1fr; /* текст | иконка */
   /* Add styles to the container */
 }
 
