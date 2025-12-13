@@ -12,8 +12,8 @@ console.clear();
 // --v-- write your code here --v--
 const title = "Hello, Instagram!";
 const textContent = "I'm Bob";
-const likes = 100;
-const user = "Bob";
+let likes = 99;
+const user = "Natalia";
 const isReported = true;
 // --^-- write your code here --^--
 
@@ -27,4 +27,8 @@ console.log(textContent);
 console.log(likes);
 console.log(user);
 console.log(isReported);
+
+likes += 1;
+
+console.log(likes);
 // --^-- write your code here --^--
