@@ -29,33 +29,33 @@ For each operation (add, subtract, multiply, divide, exponent, and modulo):
 
 // --v-- write your code here --v--
 add.addEventListener("click", () => {
-  const addResult = operand1 + operand2;
-  console.log(operand1 + " + " + operand2 + " = " + addResult);
+  const result = operand1 + operand2;
+  console.log(operand1 + " + " + operand2 + " = " + result);
 });
 
 subtract.addEventListener("click", () => {
-  const subtractResult = operand1 - operand2;
-  console.log(operand1 + " - " + operand2 + " = " + subtractResult);
+  const result = operand1 - operand2;
+  console.log(operand1 + " - " + operand2 + " = " + result);
 });
 
 multiply.addEventListener("click", () => {
-  const multiplyResult = operand1 * operand2;
-  console.log(operand1 + " * " + operand2 + " = " + multiplyResult);
+  const result = operand1 * operand2;
+  console.log(operand1 + " * " + operand2 + " = " + result);
 });
 
 divide.addEventListener("click", () => {
-  const divideResult = operand1 / operand2;
-  console.log(operand1 + " / " + operand2 + " = " + divideResult);
+  const result = operand1 / operand2;
+  console.log(operand1 + " / " + operand2 + " = " + result);
 });
 
 exponent.addEventListener("click", () => {
-  const exponentResult = operand1 ** operand2;
-  console.log(operand1 + " ** " + operand2 + " = " + exponentResult);
+  const result = operand1 ** operand2;
+  console.log(operand1 + " ** " + operand2 + " = " + result);
 });
 
 modulo.addEventListener("click", () => {
-  const moduloResult = operand1 % operand2;
-  console.log(operand1 + " mod " + operand2 + " = " + moduloResult);
+  const result = operand1 % operand2;
+  console.log(operand1 + " mod " + operand2 + " = " + result);
 });
 // --^-- write your code here --^--
 
