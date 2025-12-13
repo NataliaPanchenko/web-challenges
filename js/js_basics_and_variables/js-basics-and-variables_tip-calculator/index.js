@@ -16,8 +16,10 @@ based on the cost of the meal and the percentage of the tip.
 */
 
 const mealCost = 55;
-const tipPercentage = 10;
+const tipPercentage = 0.1;
 let tipAmount = mealCost * tipPercentage;
+const totalCost = tipAmount + mealCost;
+
 console.log(
-  `Meal coat: ${mealCost}, tip amount: ${tipPercentage}, total cost: ${tipAmount}.`
+  `Meal coat: ${mealCost}, tip amount: ${tipPercentage}, total cost: ${totalCost}.`
 );
