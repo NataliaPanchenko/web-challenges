@@ -57,6 +57,7 @@ console.log("EXERCISE 1", nameOfFirstPerson);
 // Set the variable `homersOtherFriends` to the other friends of Homer.
 
 const homersOtherFriends = people[0]["other friends"];
+// const homersOtherFriends = people.shift()["other friends"];
 console.log("EXERCISE 2", homersOtherFriends);
 
 // EXERCISE 3

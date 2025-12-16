@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Personal Profile Form</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <h2>Create your personal Profile</h2>
+
+  <form action="#" aria-labelledby="title" aria-describedby="description">
+    <p id="description_personal" description>We want tot get to know you! Please enter your personal information.</p>
+    <fieldset aria-describedby="description_personal">
+      <legend>Personal information</legend>
+
+      <label for="firstName">First name:</label>
+      <input type="text" id="firstName" name="firstName" minlength="2" placeholder="Natalia" required>
+
+      <label for="lastName">Last name:</label>
+      <input type="text" id="lastName" name="lastName" minlength="2" placeholder="Panchenko" required>
+
+      <label for="birthday">Your Birthday:</label>
+      <input id="birthday" type="date" name="birthday" max="2020-01-01" />
+
+    </fieldset>
+
+    <p id="description_more" description>Can you tell us a little bit more? We want to annoy you with unwanted ads.</p>
+    <fieldset aria-describedby="description_more">
+      <legend>Further information</legend>
+
+      <label for="color">Favourite color:</label>
+      <input type="color" id="color" name="color">
+
+      <label for="pet">Waht is your favourite pet? </label>
+      <select id="pet" name="pet">
+        <option value="" disabled selected>-- Please choose an option --</option>
+        <option value="cat">I like cats</option>
+        <option value="dog">I like dogs</option>
+        <option value="rabbit">I like rabbits</option>
+        <option value="parrot">I like parrots</option>
+        <option value="horse">I like horses</option>
+        <option value="none">I don't like pets</option>
+      </select>
+
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+</html>
