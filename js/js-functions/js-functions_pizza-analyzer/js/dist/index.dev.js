@@ -28,7 +28,6 @@ var calculatePizzaGain = function calculatePizzaGain(pizzaDiameter1, pizzaDiamet
   var radius2 = Number(pizzaDiameter2) / 2;
   var pizzaArea2 = Math.PI * Math.pow(radius2, 2);
   var pizzaGainPercent = (pizzaArea2 - pizzaArea1) / pizzaArea1 * 100;
-  console.log(pizzaGainPercent);
   output.textContent = Math.round(pizzaGainPercent);
   return Math.round(pizzaGainPercent);
 }; // Task 2: Define the function `updatePizzaDisplay` here

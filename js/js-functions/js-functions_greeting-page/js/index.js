@@ -38,7 +38,7 @@ function getGreeting() {
 
 function getDayColor() {
   const currentDay = new Date().getDay();
-  console.log(currentDay);
+
   switch (true) {
     case currentDay === 1:
       return "darkgray";

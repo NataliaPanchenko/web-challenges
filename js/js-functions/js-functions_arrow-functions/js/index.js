@@ -21,13 +21,15 @@ const getCurrentHour = () => {
   }
 };
 
-const getVectorLength = (x, y, z) => {
-  (x ** 2 + y ** 2 + z ** 2) ** 0.5;
-};
+console.log("Get current hour: ", getCurrentHour());
 
-const cleanInput = (string) => {
-  string.toLowerCase().trim();
-};
+const getVectorLength = (x, y, z) => (x ** 2 + y ** 2 + z ** 2) ** 0.5;
+
+console.log("Get vector length: ", getVectorLength(2, 2, 3));
+
+const cleanInput = (string) => string.toLowerCase().trim();
+
+console.log("Clean input: ", cleanInput("       Hello World!      "));
 
 /*
 Rewrite the following arrow functions as classic functions.
@@ -40,10 +42,16 @@ function isOddAndSmall(number) {
   return true;
 }
 
+console.log("Is odd and small: ", isOddAndSmall(5));
+
 function add3(a, b, c) {
-  a + b + c;
+  return a + b + c;
 }
 
+console.log("Add three: ", add3(7, 8, 9));
+
 function repeat10(string) {
-  string.repeat(10);
+  return string.repeat(10);
 }
+
+console.log("Repeat ten: ", repeat10("A"));

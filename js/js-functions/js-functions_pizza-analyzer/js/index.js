@@ -31,7 +31,6 @@ const calculatePizzaGain = (pizzaDiameter1, pizzaDiameter2) => {
   const radius2 = Number(pizzaDiameter2) / 2;
   const pizzaArea2 = Math.PI * radius2 ** 2;
   const pizzaGainPercent = ((pizzaArea2 - pizzaArea1) / pizzaArea1) * 100;
-  console.log(pizzaGainPercent);
   output.textContent = Math.round(pizzaGainPercent);
   return Math.round(pizzaGainPercent);
 };

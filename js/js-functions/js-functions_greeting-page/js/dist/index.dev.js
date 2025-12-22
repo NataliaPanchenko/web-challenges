@@ -43,7 +43,6 @@ function getGreeting() {
 
 function getDayColor() {
   var currentDay = new Date().getDay();
-  console.log(currentDay);
 
   switch (true) {
     case currentDay === 1:
