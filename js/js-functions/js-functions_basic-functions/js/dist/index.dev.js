@@ -1,5 +1,6 @@
-console.clear();
+"use strict";
 
+console.clear();
 /*
 1: Create the data for a book in an online store. Define variables for the following details:
   - The title of the book
@@ -7,13 +8,12 @@ console.clear();
   - The book's rating
   - The number of copies sold
 */
-
 // --v-- write your code here --v--
-const bookTitle = "Harry Potter";
-const bookAuthor = "Joanne Rowling";
-const bookRating = 4.8;
-let copiesSold = 250000;
-// --^-- write your code here --^--
+
+var bookTitle = "Harry Potter";
+var bookAuthor = "Joanne Rowling";
+var bookRating = 4.8;
+var copiesSold = 250000; // --^-- write your code here --^--
 
 /*
 2: Log all variables to the console, for example:
@@ -28,9 +28,7 @@ Then:
 - Update the book's rating.
 - Log all variables to the console again after making these updates.
 */
-
 // --v-- write your code here --v--
-
 // --^-- write your code here --^--
 
 /*
@@ -41,15 +39,15 @@ Then:
  - Replace the existing `console.log` statements with calls to this function.
  - Then, increase the number of sales two more times and log the updated details after each increase.
 */
-
 // --v-- write your code here --v--
-const logBookData = () => {
+
+var logBookData = function logBookData() {
   console.log("Title: " + bookTitle);
   console.log("Author: " + bookAuthor);
   console.log("Rating: " + bookRating);
   console.log("Sales: " + copiesSold);
-};
-// --^-- write your code here --^--
+}; // --^-- write your code here --^--
+
 
 logBookData();
 copiesSold += 1000;
