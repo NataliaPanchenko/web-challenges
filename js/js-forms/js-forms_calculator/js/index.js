@@ -2,27 +2,21 @@ console.clear();
 
 const form = document.querySelector('[data-js="form"]');
 const resultOutput = document.querySelector('[data-js="result"]');
-const numberA = document.querySelector('[data-js="number-a"]');
-const numberB = document.querySelector('[data-js="number-b"]');
-const addition = document.querySelector('[data-js="addition"]');
-const subtraction = document.querySelector('[data-js="subtraction"]');
-const multiplication = document.querySelector('[data-js="multiplication"]');
-const division = document.querySelector('[data-js="division"]');
 
 function add(a, b) {
-  return Number(a) + Number(b);
+  return a + b;
 }
 
 function subtract(a, b) {
-  return Number(a) - Number(b);
+  return a - b;
 }
 
 function multiply(a, b) {
-  return Number(a) * Number(b);
+  return a * b;
 }
 
 function divide(a, b) {
-  return Number(a) / Number(b);
+  return a / b;
 }
 
 form.addEventListener("submit", (event) => {
@@ -30,24 +24,28 @@ form.addEventListener("submit", (event) => {
   let result;
 
   // --v-- write your code here --v--
-  if (addition.checked) {
-    console.log("addition");
-    result = add(numberA.value, numberB.value);
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+
+  const numberA = Number(data.numberA);
+  const numberB = Number(data.numberB);
+  const operator = data.operator;
+
+  if (operator === "addition") {
+    result = add(numberA, numberB);
   }
-  if (subtraction.checked) {
-    console.log("substraction");
-    result = subtract(numberA.value, numberB.value);
+
+  if (operator === "subtraction") {
+    result = subtract(numberA, numberB);
   }
-  if (multiplication.checked) {
-    console.log("multiplication");
-    result = multiply(numberA.value, numberB.value);
+
+  if (operator === "multiplication") {
+    result = multiply(numberA, numberB);
   }
-  if (division.checked) {
-    console.log("division");
-    result = divide(numberA.value, numberB.value);
+
+  if (operator === "division") {
+    result = divide(numberA, numberB);
   }
   // --^-- write your code here --^--
-  console.log("form");
   resultOutput.textContent = result;
-  console.log(result);
 });
