@@ -6,13 +6,17 @@ const clearButton = document.querySelector('[data-js="clear-button"]');
 
 addButton.addEventListener("click", () => {
   // Exercise: Append a new entry to the toast messages container
-  const li = document.createElement("li");
-  li.textContent = "I'm a toast message.";
-  li.classList.add("toast-container__message");
-  toastContainer.append(li);
+  addToastMessage();
 });
 
 clearButton.addEventListener("click", () => {
   // Exercise: Clear the stack of toast messages
   toastContainer.innerHTML = "";
 });
+
+function addToastMessage() {
+  const li = document.createElement("li");
+  li.textContent = "I'm a toast message.";
+  li.classList.add("toast-container__message");
+  toastContainer.append(li);
+}
