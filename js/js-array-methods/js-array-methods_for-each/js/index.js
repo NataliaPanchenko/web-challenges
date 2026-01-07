@@ -27,3 +27,5 @@ const renderColorBox = (color) => {
 };
 
 colors.forEach(renderColorBox);
+
+console.log(renderColorBox("red"));
