@@ -45,7 +45,8 @@ fetchDataAndRender();
 async function fetchDataAndRender() {
   const response = await fetch(url);
   const data = await response.json();
-  data.results.forEach((element) => {
-    renderElement(Card(element));
+  data.results.forEach((character) => {
+    const element = Card(character);
+    renderElement(element);
   });
 }

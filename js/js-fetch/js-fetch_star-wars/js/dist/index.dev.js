@@ -45,8 +45,9 @@ function fetchDataAndRender() {
 
         case 5:
           data = _context.sent;
-          data.results.forEach(function (element) {
-            (0, _utils.renderElement)((0, _Card.Card)(element));
+          data.results.forEach(function (character) {
+            var element = (0, _Card.Card)(character);
+            (0, _utils.renderElement)(element);
           });
 
         case 7:
