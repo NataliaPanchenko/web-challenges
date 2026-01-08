@@ -1,4 +1,6 @@
 import { getRocket } from "./rocket.js";
+import { rocket } from "./rocket.js";
+import { liftoff } from "./liftoff.js";
 
 export function countdown() {
   const rocket = getRocket();
