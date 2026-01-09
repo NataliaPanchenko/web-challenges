@@ -10,10 +10,12 @@ async function fetchUserData(url) {
       headers: { "x-api-key": "reqres_c0aaf46c1fa2400e8fb8669bacd63171" },
     });
     const contentType = response.headers.get("content-type");
+
     console.log(response.status, response.ok, contentType);
     if (!response.ok) {
       throw new Error(`User not found (status: ${response.status})`);
     }
+
     if (!contentType || !contentType.includes("application/json")) {
       throw new Error(`Invalid content-type received: ${contentType}`);
     }
