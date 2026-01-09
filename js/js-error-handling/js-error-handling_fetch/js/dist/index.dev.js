@@ -6,7 +6,7 @@ var userElement = document.querySelector("[data-js='user']");
 var errorElement = document.querySelector("[data-js='error']");
 
 function fetchUserData(url) {
-  var response;
+  var response, contentType;
   return regeneratorRuntime.async(function fetchUserData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -15,41 +15,50 @@ function fetchUserData(url) {
           _context.next = 3;
           return regeneratorRuntime.awrap(fetch(url, {
             headers: {
-              "x-api-key": "reqres-free-v1"
+              "x-api-key": "reqres_c0aaf46c1fa2400e8fb8669bacd63171"
             }
           }));
 
         case 3:
           response = _context.sent;
-          console.log(response.status, response.ok);
+          contentType = response.headers.get("content-type");
+          console.log(response.status, response.ok, contentType);
 
           if (response.ok) {
-            _context.next = 7;
+            _context.next = 8;
             break;
           }
 
           throw new Error("User not found (status: ".concat(response.status, ")"));
 
-        case 7:
-          _context.next = 9;
+        case 8:
+          if (!(!contentType || !contentType.includes("application/json"))) {
+            _context.next = 10;
+            break;
+          }
+
+          throw new Error("Invalid content-type received: ".concat(contentType));
+
+        case 10:
+          _context.next = 12;
           return regeneratorRuntime.awrap(response.json());
 
-        case 9:
+        case 12:
           return _context.abrupt("return", _context.sent);
 
-        case 12:
-          _context.prev = 12;
+        case 15:
+          _context.prev = 15;
           _context.t0 = _context["catch"](0);
           return _context.abrupt("return", {
             error: _context.t0.message
           });
 
-        case 15:
+        case 18:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[0, 12]]);
+  }, null, null, [[0, 15]]);
 }
 
 var endpoints = [{
