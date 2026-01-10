@@ -4,7 +4,7 @@ console.clear();
 var url = "https://swapi.py4e.com/api/people";
 
 function fetchData() {
-  var response, data;
+  var response, data, r2d2;
   return regeneratorRuntime.async(function fetchData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -24,9 +24,12 @@ function fetchData() {
           console.log(data.results[0].name);
           console.log(data.results[4].birth_year);
           console.log(data.results[9].homeworld);
-          console.log("The eye color of " + data.results[2].name + " is " + data.results[2].eye_color);
+          r2d2 = data.results.find(function (person) {
+            return person.name === "R2-D2";
+          });
+          console.log("R2-D2s eye color:", r2d2.eye_color);
 
-        case 12:
+        case 13:
         case "end":
           return _context.stop();
       }
