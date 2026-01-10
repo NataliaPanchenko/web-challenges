@@ -8,18 +8,18 @@ function renderStars(filledStars) {
 
   // --v-- write or modify code below this line --v--
   for (let i = 1; i <= 5; i++) {
-    const img = document.createElement("img");
+    const star = document.createElement("img");
     if (i <= filledStars) {
-      img.src = "assets/star-filled.svg";
+      star.src = "assets/star-filled.svg";
     } else {
-      img.src = "assets/star-empty.svg";
+      star.src = "assets/star-empty.svg";
     }
-    img.addEventListener("click", () => {
+    star.addEventListener("click", () => {
       renderStars(i);
     });
-    starContainer.append(img);
+    starContainer.append(star);
   }
   // --^-- write or modify code above this line --^--
 }
 
-renderStars(0);
+renderStars(3);

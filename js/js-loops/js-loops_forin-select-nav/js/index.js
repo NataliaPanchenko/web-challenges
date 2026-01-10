@@ -21,10 +21,10 @@ select.name = "languages";
 main.append(select);
 
 // --v-- write or modify code below this line --v--
-for (let language in languages) {
+for (let key in languages) {
   const option = document.createElement("option");
-  option.textContent = languages[language];
-  option.value = languages[language];
+  option.textContent = languages[key];
+  option.value = languages[key];
   select.append(option);
 }
 // --^-- write or modify code above this line --^--
@@ -43,11 +43,13 @@ main.append(navElement);
 navElement.append(ul);
 
 // --v-- write or modify code below this line --v--
-for (let link in nav) {
+for (let key in nav) {
+  const menuItem = nav[key];
+
   const li = document.createElement("li");
   const a = document.createElement("a");
-  a.href = nav[link].href;
-  a.textContent = nav[link].text;
+  a.href = menuItem.href;
+  a.textContent = menuItem.text;
   li.append(a);
   ul.append(li);
 }

@@ -18,10 +18,10 @@ var select = document.createElement("select");
 select.name = "languages";
 main.append(select); // --v-- write or modify code below this line --v--
 
-for (var language in languages) {
+for (var key in languages) {
   var option = document.createElement("option");
-  option.textContent = languages[language];
-  option.value = languages[language];
+  option.textContent = languages[key];
+  option.value = languages[key];
   select.append(option);
 } // --^-- write or modify code above this line --^--
 // Part 2: Creating a Navigation Bar
@@ -46,11 +46,12 @@ var ul = document.createElement("ul");
 main.append(navElement);
 navElement.append(ul); // --v-- write or modify code below this line --v--
 
-for (var link in nav) {
+for (var _key in nav) {
+  var menuItem = nav[_key];
   var li = document.createElement("li");
   var a = document.createElement("a");
-  a.href = nav[link].href;
-  a.textContent = nav[link].text;
+  a.href = menuItem.href;
+  a.textContent = menuItem.text;
   li.append(a);
   ul.append(li);
 } // --^-- write or modify code above this line --^--

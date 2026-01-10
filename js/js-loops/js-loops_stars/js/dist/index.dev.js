@@ -8,18 +8,18 @@ function renderStars(filledStars) {
   starContainer.innerHTML = ""; // --v-- write or modify code below this line --v--
 
   var _loop = function _loop(i) {
-    var img = document.createElement("img");
+    var star = document.createElement("img");
 
     if (i <= filledStars) {
-      img.src = "assets/star-filled.svg";
+      star.src = "assets/star-filled.svg";
     } else {
-      img.src = "assets/star-empty.svg";
+      star.src = "assets/star-empty.svg";
     }
 
-    img.addEventListener("click", function () {
+    star.addEventListener("click", function () {
       renderStars(i);
     });
-    starContainer.append(img);
+    starContainer.append(star);
   };
 
   for (var i = 1; i <= 5; i++) {
@@ -28,4 +28,4 @@ function renderStars(filledStars) {
 
 }
 
-renderStars(0);
+renderStars(3);
