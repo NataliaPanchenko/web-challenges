@@ -5,5 +5,5 @@ export default function App() {
 function Greeting({ name }) {
   const coaches = ["Felix", "Klaus", "Roland"];
   const isCoach = coaches.includes(name);
-  return <div>Hello, {isCoach ? "Coach" : name}!</div>;
+  return <h1>Hello, {isCoach ? "coach" : name}!</h1>;
 }
