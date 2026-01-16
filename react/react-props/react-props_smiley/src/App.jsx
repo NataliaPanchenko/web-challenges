@@ -8,9 +8,5 @@ export default function App() {
 }
 
 function Smiley({ isHappy }) {
-  return (
-    <div>
-      <span>{isHappy ? "😊" : "😥"}</span>
-    </div>
-  );
+  return <h1>{isHappy ? "😊" : "😥"}</h1>;
 }

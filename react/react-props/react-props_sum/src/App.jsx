@@ -5,11 +5,9 @@ export default function App() {
 function Sum({ valueA, valueB }) {
   return (
     <div>
-      <span>
-        ValueA = {valueA}, valueB = {valueB}
-      </span>
-      <br />
-      <span>Sum = {valueA + valueB}</span>
+      <h1>
+        {valueA} + {valueB} = {valueA + valueB}
+      </h1>
     </div>
   );
 }
