@@ -1,4 +1,4 @@
-import App from "./components/App/App.js";
+import { App } from "./components/App/App.js";
 
 // The render function renders the app to the DOM
 function render() {
