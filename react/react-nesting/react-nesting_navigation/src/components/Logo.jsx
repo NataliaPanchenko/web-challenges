@@ -1,6 +1,11 @@
 import Image from "./Image";
 import logo from "../img/logo.jpg";
+import Link from "./Link";
 
 export default function Logo() {
-  return <Image src={logo} alt="logo" />;
+  return (
+    <Link>
+      <Image src={logo} alt={"Logo"} />
+    </Link>
+  );
 }
