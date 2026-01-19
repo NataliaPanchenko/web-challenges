@@ -10,7 +10,7 @@ export default function App() {
 function Smiley({ isHappy }) {
   return (
     <span aria-label={isHappy ? "A happy smiley" : "A sad smiley"}>
-      {isHappy ? "😊" : "😥"}
+      {isHappy ? "😌" : "😭"}
     </span>
   );
 }
