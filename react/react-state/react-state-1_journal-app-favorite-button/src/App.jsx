@@ -3,7 +3,6 @@ import EntriesSection from "./components/EntriesSection";
 import EntryForm from "./components/EntryForm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import FavoriteButton from "./components/FavoriteButton";
 
 function App() {
   return (
