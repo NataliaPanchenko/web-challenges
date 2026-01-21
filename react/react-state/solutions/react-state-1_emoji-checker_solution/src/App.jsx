@@ -1,5 +1,5 @@
-import "./styles.css";
 import { useState } from "react";
+import "./styles.css";
 
 export default function App() {
   const [code, setCode] = useState("");
@@ -7,12 +7,9 @@ export default function App() {
   const validCode = "🐡🐠🐋";
 
   function handleClick(emoji) {
-    if (code.length >= validCode.length) {
-      console.log("Please try again");
-      return code;
-    }
-    setCode(code + emoji);
+    console.log(emoji);
     console.log(code);
+    setCode(code + emoji);
   }
 
   return (
@@ -53,7 +50,8 @@ export default function App() {
       <button
         type="button"
         onClick={() => {
-          setCode("") && console.log("Reset Code!");
+          console.log("Reset Code!");
+          setCode("");
         }}
       >
         Reset

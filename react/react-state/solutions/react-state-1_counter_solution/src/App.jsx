@@ -1,19 +1,20 @@
-import "./styles.css";
 import { useState } from "react";
+import "./styles.css";
 
 export default function App() {
-  const [counter, setCounter] = useState(0);
+  const [count, setCount] = useState(0);
 
-  const incrementCount = () => {
-    setCounter(counter + 1);
-  };
-  const decrementCount = () => {
-    setCounter(counter - 1);
-  };
+  function incrementCount() {
+    setCount(count + 1);
+  }
+
+  function decrementCount() {
+    setCount(count - 1);
+  }
 
   return (
     <div className="container">
-      <h1>{counter}</h1>
+      <h1>{count}</h1>
       <div className="button-container">
         <button type="button" onClick={decrementCount}>
           -
