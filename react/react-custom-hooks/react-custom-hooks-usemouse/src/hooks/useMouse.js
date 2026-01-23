@@ -12,6 +12,5 @@ export default function useMouse() {
     handleMouse();
     document.addEventListener("mousemove", handleMouse);
   }, []);
-
   return [positionX, positionY];
 }
