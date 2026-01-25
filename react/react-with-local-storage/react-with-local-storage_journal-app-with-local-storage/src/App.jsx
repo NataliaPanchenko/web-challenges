@@ -5,6 +5,7 @@ import EntryForm from "./components/EntryForm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { uid } from "uid";
+import useLocalStorageState from "use-local-storage-state";
 
 const initialEntries = [
   {
@@ -37,21 +38,26 @@ const initialEntries = [
 ];
 
 function App() {
-  const [entries, setEntries] = useState(initialEntries);
+  const [entries, setEntries] = useLocalStorageState("entries", {
+    defaultValue: initialEntries,
+  });
   const [filter, setFilter] = useState("all"); // "all" or "favorites"
 
   function handleAddEntry(newEntry) {
     const date = new Date().toLocaleDateString("en-us", {
       dateStyle: "medium",
     });
-    setEntries([{ id: uid(), date, ...newEntry }, ...entries]);
+    setEntries((prevEntries) => [
+      { id: uid(), date, ...newEntry },
+      ...prevEntries,
+    ]);
   }
 
   function handleToggleFavorite(id) {
-    setEntries(
-      entries.map((entry) =>
-        entry.id === id ? { ...entry, isFavorite: !entry.isFavorite } : entry
-      )
+    setEntries((prevEntries) =>
+      prevEntries.map((entry) =>
+        entry.id === id ? { ...entry, isFavorite: !entry.isFavorite } : entry,
+      ),
     );
   }
 
