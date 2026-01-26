@@ -1,8 +1,13 @@
 export default function Form({ onCreate }) {
   function handleSubmit(event) {
     event.preventDefault();
+
     const form = event.target;
-    onCreate(form.name.value, form.email.value);
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    onCreate(data.name, data.email);
+
     form.reset();
   }
   return (
