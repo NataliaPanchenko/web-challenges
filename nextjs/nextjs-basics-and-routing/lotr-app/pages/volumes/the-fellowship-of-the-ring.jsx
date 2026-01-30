@@ -1,0 +1,23 @@
+import { volumes } from "resources/lib/data.js";
+
+import Link from "next/link";
+
+export default function FellowshipPage() {
+  const volume = volumes.find(
+    ({ slug }) => slug === "the-fellowship-of-the-ring"
+  );
+  return (
+    <>
+      <Link href="/">All volumes</Link>
+      <h1>{volume.title}</h1>
+      <p>{volume.description}</p>
+      <ul>
+        {volume.books.map((book) => (
+          <li key={book.ordinal}>
+            {book.ordinal}. {book.title}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
