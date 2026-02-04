@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import HistoryEntry from ".";
 
-test.skip("renders name of game and 'show score' button only", () => {
+test("renders name of game and 'show score' button only", () => {
   render(
     <HistoryEntry
       nameOfGame="Dodelido"
@@ -10,17 +10,17 @@ test.skip("renders name of game and 'show score' button only", () => {
         { name: "John", score: 2, id: "xyz" },
         { name: "Jane", score: 1, id: "abc" },
       ]}
-    />
+    />,
   );
 
   const nameOfGame = screen.getByText(/dodelido/i);
-  const button = screen.getByRole("button", { name: /show score/i });
+  const button = screen.getByRole("button", { name: /display more/i });
 
   expect(nameOfGame).toBeInTheDocument();
   expect(button).toBeInTheDocument();
 });
 
-test.skip("renders player names and scores after button click", async () => {
+test("renders player names and scores after button click", async () => {
   render(
     <HistoryEntry
       nameOfGame="Dodelido"
@@ -28,7 +28,7 @@ test.skip("renders player names and scores after button click", async () => {
         { name: "John", score: 2, id: "xyz" },
         { name: "Jane", score: 1, id: "abc" },
       ]}
-    />
+    />,
   );
 
   const noPlayer1 = screen.queryByText(/john/i);
@@ -41,7 +41,7 @@ test.skip("renders player names and scores after button click", async () => {
   expect(noPlayerScore1).not.toBeInTheDocument();
   expect(noPlayerScore2).not.toBeInTheDocument();
 
-  const button = screen.getByRole("button", { name: /show score/i });
+  const button = screen.getByRole("button", { name: /display more/i });
   await userEvent.click(button);
 
   const player1 = screen.getByText(/john/i);
