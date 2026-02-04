@@ -11,7 +11,8 @@ export default function App() {
   }
 
   function handleDelete(tagToRemove) {
-    setTags(tags.filter((tag) => tag !== tagToRemove));
+    const mutatedTags = tags.filter((tag) => tag !== tagToRemove);
+    setTags(mutatedTags);
   }
 
   return (
