@@ -1,9 +1,5 @@
 import "./styles.css";
 
-export default function App() {
-  return HelloWorldArticle();
-}
-
 export function HelloWorldArticle() {
   return (
     <article>
@@ -14,4 +10,8 @@ export function HelloWorldArticle() {
       <p>Lorem ipsum dolor sit amet.</p>
     </article>
   );
+}
+
+export default function App() {
+  return <HelloWorldArticle />;
 }
