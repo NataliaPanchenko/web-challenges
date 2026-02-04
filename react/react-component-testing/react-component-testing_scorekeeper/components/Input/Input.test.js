@@ -37,6 +37,7 @@ test("calls callback on every user input", async () => {
   );
   const user = userEvent.setup();
   const input = screen.getByRole("textbox");
+
   await user.type(input, "Natalia");
 
   expect(handleChange).toHaveBeenCalledTimes(7);

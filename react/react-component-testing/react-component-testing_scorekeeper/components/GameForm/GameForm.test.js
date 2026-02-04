@@ -8,10 +8,67 @@ jest.mock("next/router", () => ({
   },
 }));
 
-test("renders two input fields and a button", () => {});
+test("renders two input fields and a button", () => {
+  const onCreateGame = jest.fn();
+  render(<GameForm onCreateGame={onCreateGame} />);
 
-test("renders a form with the accessible name 'Create a new game'", () => {});
+  const nameOfGame = screen.getByLabelText("Name of game");
+  const playerNames = screen.getByLabelText("Player names, separated by comma");
+  const button = screen.getByRole("button", {
+    name: "Create game",
+  });
 
-test("submits the correct form data when every field is filled out", async () => {});
+  expect(nameOfGame).toBeInTheDocument();
+  expect(playerNames).toBeInTheDocument();
+  expect(button).toBeInTheDocument();
+});
 
-test("does not submit form if one input field is left empty", async () => {});
+test("renders a form with the accessible name 'Create a new game'", () => {
+  const onCreateGame = jest.fn();
+  render(<GameForm onCreateGame={onCreateGame} />);
+
+  const form = screen.getByRole("form", {
+    name: "Create a new game",
+  });
+
+  expect(form).toBeInTheDocument();
+});
+
+test("submits the correct form data when every field is filled out", async () => {
+  const onCreateGame = jest.fn();
+  const user = userEvent.setup();
+
+  render(<GameForm onCreateGame={onCreateGame} />);
+
+  const nameOfGame = screen.getByLabelText("Name of game");
+  const playerNames = screen.getByLabelText("Player names, separated by comma");
+  const button = screen.getByRole("button", {
+    name: "Create game",
+  });
+
+  await user.type(nameOfGame, "Dodelido");
+  await user.type(playerNames, "John Doe");
+  await user.click(button);
+
+  expect(onCreateGame).toHaveBeenCalledWith({
+    nameOfGame: "Dodelido",
+    playerNames: ["John Doe"],
+  });
+});
+
+test("does not submit form if one input field is left empty", async () => {
+  const onCreateGame = jest.fn();
+  const user = userEvent.setup();
+
+  render(<GameForm onCreateGame={onCreateGame} />);
+
+  const nameOfGame = screen.getByLabelText("Name of game");
+  const button = screen.getByRole("button", {
+    name: "Create game",
+  });
+
+  await user.type(nameOfGame, "Dodelido");
+  await user.click(button);
+
+  expect(onCreateGame).not.toHaveBeenCalled();
+});
