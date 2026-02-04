@@ -1,10 +1,6 @@
 import "./styles.css";
 
-export default function App() {
-  return Article();
-}
-
-export function Article() {
+function Article() {
   return (
     <article className="article">
       <h2 className="article__title">Title</h2>
@@ -12,10 +8,15 @@ export function Article() {
       <input type="text" id="newInput" />
       <a
         className="article__link"
-        href="https://en.wikipedia.org/wiki/The_Beatles"
+        href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+        target="blank"
       >
-        The Beatles
+        Click me!
       </a>
     </article>
   );
+}
+
+export default function App() {
+  return <Article />;
 }
