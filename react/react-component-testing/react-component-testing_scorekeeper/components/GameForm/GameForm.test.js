@@ -9,8 +9,8 @@ jest.mock("next/router", () => ({
 }));
 
 test("renders two input fields and a button", () => {
-  const onCreateGame = jest.fn();
-  render(<GameForm onCreateGame={onCreateGame} />);
+  const handleCreateGame = jest.fn();
+  render(<GameForm onCreateGame={handleCreateGame} />);
 
   const nameOfGame = screen.getByLabelText("Name of game");
   const playerNames = screen.getByLabelText("Player names, separated by comma");
@@ -24,8 +24,8 @@ test("renders two input fields and a button", () => {
 });
 
 test("renders a form with the accessible name 'Create a new game'", () => {
-  const onCreateGame = jest.fn();
-  render(<GameForm onCreateGame={onCreateGame} />);
+  const handleCreateGame = jest.fn();
+  render(<GameForm onCreateGame={handleCreateGame} />);
 
   const form = screen.getByRole("form", {
     name: "Create a new game",
@@ -35,10 +35,10 @@ test("renders a form with the accessible name 'Create a new game'", () => {
 });
 
 test("submits the correct form data when every field is filled out", async () => {
-  const onCreateGame = jest.fn();
+  const handleCreateGame = jest.fn();
   const user = userEvent.setup();
 
-  render(<GameForm onCreateGame={onCreateGame} />);
+  render(<GameForm onCreateGame={handleCreateGame} />);
 
   const nameOfGame = screen.getByLabelText("Name of game");
   const playerNames = screen.getByLabelText("Player names, separated by comma");
@@ -50,17 +50,17 @@ test("submits the correct form data when every field is filled out", async () =>
   await user.type(playerNames, "John Doe");
   await user.click(button);
 
-  expect(onCreateGame).toHaveBeenCalledWith({
+  expect(handleCreateGame).toHaveBeenCalledWith({
     nameOfGame: "Dodelido",
     playerNames: ["John Doe"],
   });
 });
 
 test("does not submit form if one input field is left empty", async () => {
-  const onCreateGame = jest.fn();
+  const handleCreateGame = jest.fn();
   const user = userEvent.setup();
 
-  render(<GameForm onCreateGame={onCreateGame} />);
+  render(<GameForm onCreateGame={handleCreateGame} />);
 
   const nameOfGame = screen.getByLabelText("Name of game");
   const button = screen.getByRole("button", {
@@ -70,5 +70,5 @@ test("does not submit form if one input field is left empty", async () => {
   await user.type(nameOfGame, "Dodelido");
   await user.click(button);
 
-  expect(onCreateGame).not.toHaveBeenCalled();
+  expect(handleCreateGame).not.toHaveBeenCalled();
 });
