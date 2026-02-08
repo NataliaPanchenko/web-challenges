@@ -23,7 +23,7 @@ export default function ISSTracker() {
       refreshInterval: 5000,
     },
   );
-  console.log("data", data);
+  // console.log("data", data);
   // const [coords, setCoords] = useState({
   //   longitude: 0,
   //   latitude: 0,
