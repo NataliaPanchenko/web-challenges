@@ -18,17 +18,14 @@ export default function CarRace() {
   function moveCar(clickedCar) {
     const coveredDistance = getRandomDistance();
 
-    updateCars((prevCars) => {
-      const car = prevCars.find((car) => car.emoji === clickedCar.emoji);
+    updateCars((draft) => {
+      const car = draft.findIndex((car) => car.emoji === clickedCar.emoji);
 
-      if (!car) return;
+      if (car === -1) return;
 
-      car.position.x += coveredDistance;
-      car.position.lastDistance = coveredDistance;
+      draft[car].position.x += coveredDistance;
+      draft[car].position.lastDistance = coveredDistance;
     });
-
-    console.log("clickedCar", clickedCar);
-    console.log("coveredDistance", coveredDistance);
   }
 
   const winner = cars.find((car) => car.position.x >= finishLine);
