@@ -4,7 +4,7 @@ import { useState } from "react";
 const apiStatusUrl = "https://example-apis.vercel.app/api/status";
 
 export default function StatusCheck() {
-  const [statusIcon, setStatusIcon] = useState("⏳");
+  const [statusIcon, setStatusIcon] = useState("⁉️");
   // Something needs to change here…
   // ↙️
   async function handleCheckApiStatus() {
@@ -23,9 +23,11 @@ export default function StatusCheck() {
     // --v-- write your code here --v--
 
     try {
+      setStatusIcon("⏳");
       const response = await fetch(apiStatusUrl);
-      setStatusIcon(response.ok ? "✅" : "❌");
-    } catch (e) {
+      const icon = response.ok ? "✅" : "❌";
+      setStatusIcon(icon);
+    } catch {
       setStatusIcon("🚨");
     }
 
