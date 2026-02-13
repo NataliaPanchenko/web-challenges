@@ -15,7 +15,7 @@ export default function HomePage() {
 
   return (
     <Container>
-      <Title>Products</Title>
+      <Title>Products 🐠</Title>
 
       <Grid>
         {data.map((product) => (
@@ -24,6 +24,7 @@ export default function HomePage() {
               <Name>{product.name}</Name>
             </StyledLink>
             <Price>€{product.price}</Price>
+            <Category>{product.category}</Category>
           </Card>
         ))}
       </Grid>
@@ -69,9 +70,21 @@ export const Name = styled.h2`
   margin-bottom: 10px;
 `;
 
-export const Price = styled.p`
+export const Element = styled.p`
   font-weight: bold;
   color: #4f46e5;
+`;
+
+export const Price = styled(Element)`
+  color: #10b981;
+  background: #ecfdf5;
+`;
+
+export const Category = styled(Element)`
+  color: #f59e0b;
+  background: #fffbeb;
+  font-size: 0.85rem;
+  display: inline-block;
 `;
 
 export const Message = styled.p`
