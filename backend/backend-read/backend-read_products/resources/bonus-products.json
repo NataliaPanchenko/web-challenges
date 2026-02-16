@@ -1,5 +1,4 @@
-[
-  {
+[{
     "_id": {
       "$oid": "626a48a8916f633a190f0251"
     },
@@ -7,7 +6,9 @@
     "description": "Prefers to live in pairs",
     "price": 19,
     "currency": "EUR",
-    "reviews": [{ "$oid": "63b598370e7740872e8c10c1"}]
+    "reviews": [{
+      "$oid": "63b598370e7740872e8c10c1"
+    }]
   },
   {
     "_id": {
@@ -17,7 +18,9 @@
     "description": "Nemo",
     "price": 65,
     "currency": "EUR",
-    "reviews": [{ "$oid": "63b598370e7740872e8c10c2" }]
+    "reviews": [{
+      "$oid": "63b598370e7740872e8c10c2"
+    }]
 
   },
   {
@@ -28,9 +31,13 @@
     "description": "Is splendid",
     "price": 90,
     "currency": "EUR",
-    "reviews": [
-      { "$oid": "63b598370e7740872e8c10c3"},
-      { "$oid": "63b598370e7740872e8c10c4"}]
+    "reviews": [{
+        "$oid": "63b598370e7740872e8c10c3"
+      },
+      {
+        "$oid": "63b598370e7740872e8c10c4"
+      }
+    ]
   },
   {
     "_id": {
@@ -49,9 +56,13 @@
     "description": "A diurnal loner",
     "price": 90,
     "currency": "EUR",
-    "reviews": [
-      { "$oid": "63b598370e7740872e8c10c5"}, 
-      { "$oid": "63b598370e7740872e8c10c2"}]
+    "reviews": [{
+        "$oid": "63b598370e7740872e8c10c5"
+      },
+      {
+        "$oid": "63b598370e7740872e8c10c2"
+      }
+    ]
   },
   {
     "_id": {
@@ -61,9 +72,13 @@
     "description": "Small but nice",
     "price": 5,
     "currency": "EUR",
-    "reviews": [
-      { "$oid": "63b598370e7740872e8c10c4"},
-      { "$oid": "63b598370e7740872e8c10c1"}]
+    "reviews": [{
+        "$oid": "63b598370e7740872e8c10c4"
+      },
+      {
+        "$oid": "63b598370e7740872e8c10c1"
+      }
+    ]
   },
   {
     "_id": {
