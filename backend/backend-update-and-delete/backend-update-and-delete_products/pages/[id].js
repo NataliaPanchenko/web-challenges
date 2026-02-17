@@ -8,7 +8,7 @@ import ProductForm from "@/components/ProductForm";
 export default function Product() {
   const router = useRouter();
   const { id } = router.query;
-  const { data, isLoading, mutate } = useSWR(`/api/products/${id}`);
+  const { data, isLoading, mutate } = useSWR(id ? `/api/products/${id}` : null);
 
   const [isEditMode, setIsEditMode] = useState(false);
 
