@@ -58,9 +58,14 @@ export default function Product() {
           setIsEditMode(!isEditMode);
         }}
       >
-        <span role="img" aria-label="a pencil">
-          ✏️
-        </span>
+        {" "}
+        {isEditMode ? (
+          <span>Editing mode</span>
+        ) : (
+          <span role="img" aria-label="a pencil">
+            ✏️
+          </span>
+        )}
       </StyledButton>
       {isEditMode && <ProductForm onSubmit={handleEditProducts} />}
       <StyledLink href="/">Back to all</StyledLink>
