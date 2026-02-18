@@ -17,6 +17,18 @@ export default async function handler(request, response) {
     return;
   }
 
+  if (request.method === "DELETE") {
+    const product = await Product.findByIdAndDelete(id);
+
+    if (!product) {
+      response.status(404).json({ status: "Not Found" });
+      return;
+    }
+
+    response.status(200).json(product);
+    return;
+  }
+
   if (request.method === "PUT") {
     const newProductData = request.body;
     try {
@@ -27,13 +39,11 @@ export default async function handler(request, response) {
       if (!updatedProduct) {
         return response.status(404).json({ error: "Product not found" });
       }
-      return response
-        .status(200)
-        .json({
-          status: "Product successfully updated.",
-          success: true,
-          data: updatedProduct,
-        });
+      return response.status(200).json({
+        status: "Product successfully updated.",
+        success: true,
+        data: updatedProduct,
+      });
     } catch (error) {
       response.status(400).json({ error: error.message });
     }

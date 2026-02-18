@@ -11,6 +11,7 @@ export default function Product() {
   const { data, isLoading, mutate } = useSWR(id ? `/api/products/${id}` : null);
 
   const [isEditMode, setIsEditMode] = useState(false);
+  const [isDeleteMode, setIsDeleteMode] = useState(false);
 
   async function handleEditProducts(event) {
     event.preventDefault();
@@ -36,6 +37,19 @@ export default function Product() {
     }
     event.target.reset();
   }
+
+  const handleDeleteProduct = async () => {
+    const response = await fetch(`/api/products/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      router.push("/");
+    }
+    if (!response.ok) {
+      console.error(response.status);
+      return;
+    }
+  };
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -66,8 +80,21 @@ export default function Product() {
             ✏️
           </span>
         )}
+        <span> </span>
       </StyledButton>
-      {isEditMode && <ProductForm onSubmit={handleEditProducts} />}
+      <StyledButton type="button" onClick={handleDeleteProduct}>
+        {isDeleteMode ? (
+          <span>Deleting mode</span>
+        ) : (
+          <span role="img" aria-label="a pencil">
+            ❌
+          </span>
+        )}
+        <span> </span>
+      </StyledButton>
+      {isEditMode && (
+        <ProductForm onSubmit={handleEditProducts} defaultValue={data} />
+      )}
       <StyledLink href="/">Back to all</StyledLink>
     </ProductCard>
   );
