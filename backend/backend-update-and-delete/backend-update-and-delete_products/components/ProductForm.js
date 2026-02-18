@@ -1,25 +1,45 @@
 import styled from "styled-components";
 import StyledButton from "@/components/Button";
 
-export default function ProductForm({ onSubmit }) {
+export default function ProductForm({ onSubmit, defaultValue }) {
   return (
     <StyledForm onSubmit={onSubmit}>
       <StyledHeading>Add a new Fish</StyledHeading>
       <StyledLabel htmlFor="name">
         Name:
-        <input type="text" id="name" name="name" />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          defaultValue={defaultValue?.name || ""}
+        />
       </StyledLabel>
       <StyledLabel htmlFor="description">
         Description:
-        <input type="text" id="description" name="description" />
+        <input
+          type="text"
+          id="description"
+          name="description"
+          defaultValue={defaultValue?.description || ""}
+        />
       </StyledLabel>
       <StyledLabel htmlFor="price">
         Price:
-        <input type="number" id="price" name="price" min="0" />
+        <input
+          type="number"
+          id="price"
+          name="price"
+          min="0"
+          defaultValue={defaultValue?.price || ""}
+        />
       </StyledLabel>
       <StyledLabel htmlFor="currency">
         Currency:
-        <select id="currency" name="currency">
+        <select
+          id="currency"
+          name="currency"
+          defaultValue={defaultValue?.currency || "USD"}
+        >
           <option value="EUR">EUR</option>
           <option value="USD">USD</option>
           <option value="GBP">GBP</option>
