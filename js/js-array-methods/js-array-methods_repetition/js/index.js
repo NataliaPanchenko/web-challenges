@@ -53,7 +53,7 @@ console.log("timePerServing", timePerServing);
 // HINT: use first map() and then Array.prototype.join() with "method chaining" like so:
 // myArray.map(...).join(', ');
 
-const allTitlesInOneString = recipes.map((recipe) => recipe.title); // 'Crepes, Scrambled Eggs, ...'
+const allTitlesInOneString = recipes.map((recipe) => recipe.title).join(", "); // 'Crepes, Scrambled Eggs, ...'
 console.log("allTitlesInOneString", allTitlesInOneString);
 
 // For more information how to join an array,
@@ -72,7 +72,7 @@ console.log(
 );
 
 const allRecipesWithMoreThan2Servings = recipes.filter(
-  (recipe) => recipe.servings >= 2,
+  (recipe) => recipe.servings > 2,
 );
 console.log("allRecipesWithMoreThan2Servings", allRecipesWithMoreThan2Servings);
 
